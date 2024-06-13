@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import Link from "next/link"
+import { logout } from "@/libs/action"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -22,7 +23,9 @@ export default function RootLayout({
         <Link href="/login">login</Link>
         <Link href="/register">register</Link>
         <Link href="/dashboard">DashBoard</Link>
-
+        <form action={logout}>
+          <button>로그아웃</button>
+        </form>
         {children}
       </body>
     </html>
